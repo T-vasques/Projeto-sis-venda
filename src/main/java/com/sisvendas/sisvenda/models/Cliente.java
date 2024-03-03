@@ -1,5 +1,7 @@
 package com.sisvendas.sisvenda.models;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
@@ -16,12 +18,12 @@ public class Cliente extends BaseModel{
     
     @JsonIgnore
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-    private list<Pedido> pedidos;
+    private List<Pedido> pedidos;
     
-    public list<Pedido> getPedidos() {
+    public List<Pedido> getPedidos() {
         return pedidos;
     }
-    public void setPedidos(list<Pedido> pedidos) {
+    public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
     public String getNome() {

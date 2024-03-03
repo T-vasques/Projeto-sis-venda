@@ -1,6 +1,7 @@
 package com.sisvendas.sisvenda.models;
 
-import java.sql.Date;
+import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -10,7 +11,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name ="PEDIDO")
+@Table(name = "PEDIDO")
 public class Pedido extends BaseModel{
     private Date dataEmissao;
     private double totalPedido;
@@ -20,13 +21,13 @@ public class Pedido extends BaseModel{
     private Cliente cliente;
     
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
-    private list<PedidoProduto> pedidoProdutos;
+    private List<PedidoProduto> pedidoProdutos;
     
-    public list<PedidoProduto> getPedidoProdutos() {
+    public List<PedidoProduto> getPedidoProdutos() {
         return pedidoProdutos;
     }
 
-    public void setPedidoProdutos(list<PedidoProduto> pedidoProdutos) {
+    public void setPedidoProdutos(List<PedidoProduto> pedidoProdutos) {
         this.pedidoProdutos = pedidoProdutos;
     }
 
