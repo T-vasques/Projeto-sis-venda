@@ -7,12 +7,14 @@ import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class BaseModel {
-    private long id;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    
     public long getId() {
         return id;
     }
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
     public void setId(long id) {
         this.id = id;
     }

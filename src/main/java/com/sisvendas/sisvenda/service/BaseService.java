@@ -3,12 +3,9 @@ package com.sisvendas.sisvenda.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.hibernate.annotations.processing.Find;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.sisvendas.sisvenda.models.BaseModel;
-import com.sisvendas.sisvenda.models.list;
 
 public abstract class BaseService<TEntity extends BaseModel,
     IRepository extends JpaRepository<TEntity, Long>>{
